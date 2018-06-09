@@ -307,11 +307,11 @@ namespace Fusee.Tutorial.Core
 
             //Claw 1 Bewegung
             float claw1 = _claw1Transform.Translation.z;
-            claw1 += 60 * Keyboard.LeftRightAxis * DeltaTime*4;
+            claw1 += 2.8f * Keyboard.LeftRightAxis;
             _claw1Transform.Translation = new float3(-claw1,0,0);
              //Claw 2 Bewegung
            float claw2 = _claw2Transform.Translation.z;
-            claw2 += 60* Keyboard.LeftRightAxis * DeltaTime*4;
+            claw2 += 2.8f * Keyboard.LeftRightAxis;
             _claw2Transform.Translation = new float3(claw2,0,0);  
     
        
