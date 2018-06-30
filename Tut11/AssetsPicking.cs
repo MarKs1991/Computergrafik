@@ -140,7 +140,7 @@ namespace Fusee.Tutorial.Core
                     _currentPick = newPick;
                     }
             }
-           
+          
      //   _gunTransform.Rotation = new float3(0,0,1.5f);
       //  _leftFrontTransform.Rotation = new float3(5,0,0);
 
@@ -148,50 +148,54 @@ namespace Fusee.Tutorial.Core
               
                 if (_currentPick.Node.Name == "hull") {
                     if (Keyboard.UpDownAxis != 0) {
-                        _tankTransform.Translation += new float3(-0.025f * Keyboard.UpDownAxis, 0, 0);
-                        _radvl.Rotation += new float3(-0.02f * Keyboard.UpDownAxis, 0, 0);
-                        _radvr.Rotation += new float3(-0.02f * Keyboard.UpDownAxis, 0, 0);
+                        _tankTransform.Translation += new float3(-3 * Keyboard.UpDownAxis* DeltaTime, 0, 0);
+                        _radvl.Rotation += new float3(-3 * Keyboard.UpDownAxis* DeltaTime, 0, 0);
+                        _radvr.Rotation += new float3(-3 * Keyboard.UpDownAxis* DeltaTime, 0, 0);
                     
-                        _radhl.Rotation += new float3(-0.02f * Keyboard.UpDownAxis, 0, 0);
-                        _radhr.Rotation += new float3(-0.02f * Keyboard.UpDownAxis, 0, 0);
+                        _radhl.Rotation += new float3(-3 * Keyboard.UpDownAxis* DeltaTime, 0, 0);
+                        _radhr.Rotation += new float3(-3 * Keyboard.UpDownAxis* DeltaTime, 0, 0);
                        
                     }
                   
                 }
                 if (_currentPick.Node.Name == "hull") {
                   if (Keyboard.LeftRightAxis != 0) {
-                        _tankTransform.Rotation += new float3(0, -0.025f * Keyboard.LeftRightAxis, 0);
-                        _radvl.Rotation += new float3(0.02f * Keyboard.LeftRightAxis, 0, 0);
-                        _radvr.Rotation += new float3(0.02f * Keyboard.LeftRightAxis, 0, 0);
+                        _tankTransform.Rotation += new float3(0, -3f * Keyboard.LeftRightAxis*DeltaTime, 0);
+                        _radvl.Rotation += new float3(-3f * Keyboard.LeftRightAxis*DeltaTime, 0, 0);
+                        _radvr.Rotation += new float3(-3f * Keyboard.LeftRightAxis*DeltaTime, 0, 0);
                     
-                        _radhl.Rotation += new float3(-0.02f * Keyboard.LeftRightAxis, 0, 0);
-                        _radhr.Rotation += new float3(-0.025f * Keyboard.LeftRightAxis, 0, 0);
+                        _radhl.Rotation += new float3(-3f * Keyboard.LeftRightAxis*DeltaTime, 0, 0);
+                        _radhr.Rotation += new float3(-3f * Keyboard.LeftRightAxis*DeltaTime, 0, 0);
                     
-                    }}
+                    }
+                    }
                 if (_currentPick.Node.Name == "turm") {
                    if (Keyboard.LeftRightAxis != 0) {
                         _turretTransform.Rotation += new float3(0, 0.9f * Keyboard.LeftRightAxis* DeltaTime, 0);
                    }
                         if (Keyboard.UpDownAxis != 0) {
-                        _gunTransform1.Rotation += new float3(0,0,  -0.015f * Keyboard.UpDownAxis);
-                        _gunTransform2.Rotation += new float3(0,0,  -0.015f * Keyboard.UpDownAxis);
-                        _gunTransform3.Rotation += new float3(0,0,  -0.015f * Keyboard.UpDownAxis);
+                        _gunTransform1.Rotation += new float3(0,0,  -1 * Keyboard.UpDownAxis*DeltaTime);
+                        _gunTransform2.Rotation += new float3(0,0,  -1 * Keyboard.UpDownAxis*DeltaTime);
+                        _gunTransform3.Rotation += new float3(0,0,  -1 * Keyboard.UpDownAxis*DeltaTime);
                 }    
         }
 
         if(_currentPick.Node.Name == "gun1"){
                     if (Keyboard.UpDownAxis != 0) {
-                    _gunTransform1.Rotation += new float3(0, 0, -0.02f * Keyboard.UpDownAxis);
-                    }
-                }
+                        
+                    _gunTransform1.Rotation += new float3(0, 0, -1 * Keyboard.UpDownAxis*DeltaTime);
+            
+                  }
+            }
+         
         if(_currentPick.Node.Name == "gun2"){
                     if (Keyboard.UpDownAxis != 0) {
-                    _gunTransform2.Rotation += new float3(0, 0, -0.02f * Keyboard.UpDownAxis);
+                    _gunTransform2.Rotation += new float3(0, 0, -1 * Keyboard.UpDownAxis*DeltaTime);
                     }
                 }
         if(_currentPick.Node.Name == "gun3"){
                     if (Keyboard.UpDownAxis != 0) {
-                    _gunTransform3.Rotation += new float3(0, 0, -0.02f * Keyboard.UpDownAxis);
+                    _gunTransform3.Rotation += new float3(0, 0, -1 * Keyboard.UpDownAxis*DeltaTime);
                     }
                 }
 
